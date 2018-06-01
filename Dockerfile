@@ -20,5 +20,6 @@ RUN git clone git://github.com/Microsoft/checkedc-llvm.git /tmp/checkedc && \
 		/tmp/checkedc && \
 	make -j $(($(nproc) / 2)) && make DESTDIR=/opt/checkedc-llvm install && \
 	rm -rfv /tmp/checkedc /tmp/checkedc.obj \
-		/opt/checkedc-llvm/include /opt/checkedc-llvm/lib
-
+		/opt/checkedc-llvm/include \
+		/opt/checkedc-llvm/lib/*.a \
+		/opt/checkedc-llvm/lib/*.so
